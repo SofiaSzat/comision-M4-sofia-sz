@@ -3,12 +3,13 @@ require('dotenv').config();
 const express = require('express')
 const server = express()
 
-
+const userRouter = require ('./routes/Userroutes.js')
 const PORT = 3000
 
 server.get('/', (req, res) => {
   res.send('Hola Mundo!')
 })
+
 
 //probando status code
 
@@ -23,6 +24,8 @@ server.get('/ruta2', (req, res) => {
     }
   });
   */
+
+  server.use(userRouter);
 
 
 
