@@ -1,3 +1,4 @@
+require('dotenv').config();
 
 const express = require('express')
 const server = express()
@@ -27,6 +28,6 @@ server.get('/ruta2', (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
-
+  console.log (process.env.DB_USER);
 })
 
