@@ -1,9 +1,13 @@
 require('dotenv').config();
 
 const express = require('express')
-const server = express()
+const bodyParser = require('body-parser');
 
-const userRouter = require ('./routes/Userroutes.js')
+const userRouter = require ('./routes/Userroutes.js');
+const AuthRoutes = require ('./routes/AuthRoutes.js');
+
+
+const server = express();
 const PORT = 3000
 
 server.get('/', (req, res) => {
@@ -24,9 +28,13 @@ server.get('/ruta2', (req, res) => {
     }
   });
   */
+//MIDDLEWARES//
+server.use(bodyParser.json());
+
+
 
   server.use(userRouter);
-
+  server.use(AuthRoutes);
 
 
 server.listen(PORT, () => {
