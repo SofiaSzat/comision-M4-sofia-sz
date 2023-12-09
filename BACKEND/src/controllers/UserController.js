@@ -1,12 +1,12 @@
 const UserModel= require ('../models/UserModel.js')
 const userControl = {}
 
-const listado = [
+/*const listado = [
     { nombre: 'Checo'},
     { nombre: 'Max' }
 
 ];
-//funciona y se puede ver el listado OK
+//funciona y se puede ver el listado OK*/
 
 //ver usuarios
 userControl.verUsuarios =  async (req, res) => {
@@ -39,6 +39,7 @@ userControl.verUser = async(req,res) => {
 userControl.crearUser= async (req,res) => {
     try{
         const {nombres,apellidos,username,password} = req.body;
+        
         const newUser = new UserModel({
             nombres: nombres,
             apellidos: apellidos,
@@ -55,6 +56,7 @@ userControl.crearUser= async (req,res) => {
     
 }
 //editar usuario
+//OTRA FORMA DE ENCONTRAR AL USUARIO??
 userControl.editarUser= async (req,res) => {
     try{
         const {nombres, apellidos, username, id} = req.body;
