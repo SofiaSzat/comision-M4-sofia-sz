@@ -3,6 +3,8 @@ require('dotenv').config();
 const express = require('express')
 const bodyParser = require('body-parser');
 
+const conectarMongoDB = require ('./config/mongoose.js');
+
 const userRouter = require ('./routes/Userroutes.js');
 const AuthRoutes = require ('./routes/AuthRoutes.js');
 const GeorefRouter= require ('./routes/GeorefRouter.js');
@@ -42,5 +44,6 @@ server.use(bodyParser.json());
 server.listen(PORT, () => {
   console.log(`Servidor escuchando en puerto ${PORT}`);
   console.log (process.env.DB_USER);
+  conectarMongoDB();
 })
 

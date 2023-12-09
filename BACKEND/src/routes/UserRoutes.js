@@ -1,6 +1,6 @@
 const userRouter = require ('express').Router();
-const { verUsuarios, verUser, crearUser, editarUser, eliminarUser } = require ('./../controllers/Usercontroller.js');
-//aca desestructuramos para poder usar el 'verUsuarios' solo abajo. Simplificando.
+const { verUsuarios, verUser, crearUser, editarUser, eliminarUser } = require ('./../controllers/UserController.js');
+
 
 
 //ver usuarios
