@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 
 const userRouter = require ('./routes/Userroutes.js');
 const AuthRoutes = require ('./routes/AuthRoutes.js');
+const GeorefRouter= require ('./routes/GeorefRouter.js');
 
 
 const server = express();
@@ -35,6 +36,7 @@ server.use(bodyParser.json());
 
   server.use(userRouter);
   server.use(AuthRoutes);
+  server.use(GeorefRouter);
 
 
 server.listen(PORT, () => {
