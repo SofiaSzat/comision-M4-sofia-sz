@@ -1,4 +1,4 @@
-//const userModel = require('./../models/UserModel');
+const userModel = require('./../models/UserModel.js');
 
 const jwt = require('jsonwebtoken');
 //importando libreria
@@ -12,13 +12,9 @@ const usuarios =[
     {id: 2, usuario: 'Lando', password: 'MCL60', username: 'LN4'},
  ];
 
-AuthController.autenticar = /*async*/ (req,res) => {
-    const username= req.body.username;
-    let token = jwt.sign({username: username}, JWT_KEY);
-
-    res.json({token:token}); 
-
-    /*try {
+ //LOGEO
+AuthController.autenticar = async (req,res) => {
+try {
     const {username, password } = req.body;
     const encontrado = await userModel.findOne( {where:{ username, password }} )
 
@@ -28,17 +24,18 @@ AuthController.autenticar = /*async*/ (req,res) => {
     const datos = {
         id: encontrado._id,
         username: encontrado.username,
-        nombres: encontrado.nombres,
+        nombres: encontrado.nombres,            //NO SE SI DEJAR EL NOMBRE Y APELLIDO PARA BUSCARLO. 
         apellidos: encontrado.apellidos,
     }
 
     let token = jwt.sign(datos, JWT_KEY); //esto me devolvia el error INVALID SIGNATURE, faltaba el JWT_KEY
                     //metodo sign
-    res.json({token:  token, data: datos});
+
+    res.json({token:  token, datos}); //responder
 }catch(error){
     return res.status(500).json({ mensaje: 'Hubo un error en el servidor!'})
 
-}*/
+}
 }
 //FALTA MAS ACA//
 AuthController.registrar = (req,res) =>{
