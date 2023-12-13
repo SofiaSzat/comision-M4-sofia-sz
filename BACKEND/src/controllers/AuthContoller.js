@@ -12,13 +12,8 @@ const usuarios =[
     {id: 2, usuario: 'Lando', password: 'MCL60', username: 'LN4'},
  ];
 
-AuthController.autenticar = /*async*/ (req,res) => {
-    const username= req.body.username;
-    let token = jwt.sign({username: username}, JWT_KEY);
-
-    res.json({token:token}); 
-
-    /*try {
+AuthController.autenticar = async (req,res) => {
+try {
     const {username, password } = req.body;
     const encontrado = await userModel.findOne( {where:{ username, password }} )
 
@@ -38,7 +33,7 @@ AuthController.autenticar = /*async*/ (req,res) => {
 }catch(error){
     return res.status(500).json({ mensaje: 'Hubo un error en el servidor!'})
 
-}*/
+}
 }
 //FALTA MAS ACA//
 AuthController.registrar = (req,res) =>{
