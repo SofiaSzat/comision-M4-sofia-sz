@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express')
 const bodyParser = require('body-parser');
+const cors = require ('cors');
 
 const conectarMongoDB = require ('./config/mongoose.js');
 
@@ -33,6 +34,7 @@ server.get('/ruta2', (req, res) => {
   */
 //MIDDLEWARES//
 server.use(bodyParser.json());
+server.use(cors());
 
 
 
