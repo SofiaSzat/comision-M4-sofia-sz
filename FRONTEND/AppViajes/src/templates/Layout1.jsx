@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card';
-import Navbarra from './../components/Navbar.jsx';
+import Navbarra from '../components/Navbar.jsx';
 
 
 const DefaultLayout = (props) => {

@@ -1,10 +1,11 @@
 import Card from 'react-bootstrap/Card';
+import PostForm from './../components/PosteosForm.jsx';
 
 
 const NuevoPosteo =()=> {
     return (
    
-       <Card.Body  >AK VA EL FORM o CARD del post </Card.Body>
+       <Card.Body ><PostForm/></Card.Body>
         
     )
 }
